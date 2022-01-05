@@ -1,0 +1,13 @@
+.container {
+  height: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}

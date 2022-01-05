@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 100%;
+  position: relative;
+  padding: 10px 0 15px 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: black;
+}
+
+.gradient {
+  height: 21px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 1) 100%);
+}

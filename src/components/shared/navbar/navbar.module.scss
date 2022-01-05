@@ -1,0 +1,49 @@
+@import '/src/styles/variables.scss';
+
+.container {
+  height: 50px;
+  width: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 2px solid #efefef;
+  background: white;
+
+  @media (max-width: $tablet-break) {
+    border-radius: 0;
+    width: 100vw;
+  }
+}
+
+.sticky {
+  @extend .container;
+  position: fixed;
+  z-index: 50;
+
+  @media (min-width: $mobile-break) {
+    transform: translateX(-50%);
+  }
+}
+
+.logo {
+  margin-left: 20px;
+  font-weight: 800;
+  cursor: pointer;
+
+  @media (max-width: $mobile-break) {
+    display: none;
+  }
+}
+
+.pages {
+  display: flex;
+  margin-right: 10px;
+
+  @media (max-width: $mobile-break) {
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+}

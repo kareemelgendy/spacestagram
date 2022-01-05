@@ -1,0 +1,24 @@
+@import '/src/styles/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+  width: 325px;
+}
+
+.image {
+  display: flex;
+  white-space: nowrap;
+}
+
+.pages {
+  display: flex;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+
+  &__button {
+    border: none;
+    background: transparent;
+    margin: 0 5px;
+    padding: 0;
+  }
+}
