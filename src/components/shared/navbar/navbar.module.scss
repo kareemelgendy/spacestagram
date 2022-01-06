@@ -15,6 +15,16 @@
     border-radius: 0;
     width: 100vw;
   }
+
+  @media (max-width: $mobile-break) {
+    height: 50px;
+    padding-bottom: env(safe-area-inset-bottom);
+    border-top: 2px solid #efefef;
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .sticky {
@@ -44,6 +54,5 @@
   @media (max-width: $mobile-break) {
     justify-content: space-evenly;
     width: 100%;
-    margin: 20px 0 0 0;
   }
 }
