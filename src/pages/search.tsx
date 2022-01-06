@@ -11,13 +11,12 @@ import styles from 'styles/Home.module.scss'
 const Search: NextPage = () => {
   const [posts, setPosts] = useState<PostData[]>([])
   const [activeSearch, setActiveSearch] = useState(false)
+  const postsLoaded = posts.length > 0
 
   const resetSearch = () => {
     setActiveSearch(false)
     setPosts([])
   }
-
-  const postsLoaded = posts.length > 0
 
   return (
     <PageLayout title="Search">
