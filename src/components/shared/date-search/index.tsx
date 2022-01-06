@@ -66,7 +66,7 @@ const DateSearch = ({ setActiveSearch, setPosts }: DateSearchProps) => {
   }
 
   return (
-    <div className={`${styles.container}${error ? styles.error : ''}`}>
+    <div className={`${styles.container} ${error ? styles.error : ''}`}>
       <Icon name="planet" size={72} />
       <div className={styles.wrapper}>
         <h2>Discover more images</h2>
