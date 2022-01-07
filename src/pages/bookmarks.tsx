@@ -1,4 +1,4 @@
-import PageLayout from 'components/layout'
+import Page from 'components/layout'
 import Icon from 'components/shared/icon'
 import NoResults from 'components/shared/no-results'
 import Post from 'components/shared/post'
@@ -17,7 +17,7 @@ const SavedPosts: NextPage = () => {
   }, [])
 
   return (
-    <PageLayout title="Bookmarks">
+    <Page title="Bookmarks">
       {data.length > 0 ? (
         <>
           <SectionHeader iconName="bookmarks" title="bookmarks" />
@@ -31,7 +31,7 @@ const SavedPosts: NextPage = () => {
           message="No bookmarked images yet!"
         />
       )}
-    </PageLayout>
+    </Page>
   )
 }
 

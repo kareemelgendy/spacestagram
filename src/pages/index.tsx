@@ -1,4 +1,4 @@
-import PageLayout from 'components/layout'
+import Page from 'components/layout'
 import Post from 'components/shared/post'
 import Preloader from 'components/shared/preloader'
 import SectionHeader from 'components/shared/section-header'
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <PageLayout title="Spacetagram">
+    <Page title="Spacetagram">
       {postsLoaded ? (
         <>
           <SectionHeader iconName="planet" title="final frontier" />
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
           <Preloader />
         </div>
       )}
-    </PageLayout>
+    </Page>
   )
 }
 

@@ -12,7 +12,7 @@ class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="Spacetagram. An image-sharing application using NASAs picture of the day API"
+            content="Spacetagram. An image-sharing application using NASAs Picture of the Day API"
           />
           <meta name="theme-color" content="#efefef" />
           <link rel="preconnect" href="https://apod.nasa.gov/" />

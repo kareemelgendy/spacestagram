@@ -3,12 +3,12 @@ import { ReactNode } from 'react'
 import styles from 'styles/Home.module.scss'
 import Navbar from 'components/shared/navbar'
 
-interface PageLayoutProps {
+interface PageProps {
   title: string
   children: ReactNode
 }
 
-const PageLayout = ({ title, children }: PageLayoutProps) => {
+const Page = ({ title, children }: PageProps) => {
   return (
     <>
       <Head>
@@ -22,4 +22,4 @@ const PageLayout = ({ title, children }: PageLayoutProps) => {
   )
 }
 
-export default PageLayout
+export default Page

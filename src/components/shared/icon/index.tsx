@@ -10,7 +10,7 @@ interface IconProps {
 }
 
 const Icon = ({ name, fill, size, ariaLabel, onClick }: IconProps): JSX.Element => {
-  const ButtonIcon = () => (
+  const BoxIcon = () => (
     <Image
       src={`/assets/icons/${name}${fill ? `_filled` : ``}.svg`}
       alt={`${name}-icon`}
@@ -23,11 +23,11 @@ const Icon = ({ name, fill, size, ariaLabel, onClick }: IconProps): JSX.Element 
 
   return onClick ? (
     <button className={styles.wrapper__button} onClick={onClick}>
-      <ButtonIcon />
+      <BoxIcon />
     </button>
   ) : (
     <div className={styles.wrapper}>
-      <ButtonIcon />
+      <BoxIcon />
     </div>
   )
 }

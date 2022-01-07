@@ -9,7 +9,6 @@ export const validateDate = (date: string): boolean => {
   const earliest = new Date('1995-06-16')
   const latest = new Date(todaysDate())
   const current = new Date(date)
-
   return !(!re.test(date) || current < earliest || current > latest)
 }
 

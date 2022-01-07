@@ -1,11 +1,11 @@
-import PageLayout from 'components/layout'
+import Page from 'components/layout'
 import Icon from 'components/shared/icon'
 import NoResults from 'components/shared/no-results'
 import { NextPage } from 'next'
 
 const Custom404: NextPage = () => {
   return (
-    <PageLayout title="Error - Spacetagram">
+    <Page title="Error">
       <NoResults
         image={
           <>
@@ -14,9 +14,9 @@ const Custom404: NextPage = () => {
             <Icon name="satellite" size={72} />
           </>
         }
-        message="Something went wrong"
+        message="Something went wrong."
       />
-    </PageLayout>
+    </Page>
   )
 }
 

@@ -1,4 +1,4 @@
-import PageLayout from 'components/layout'
+import Page from 'components/layout'
 import DateSearch from 'components/shared/date-search'
 import Post from 'components/shared/post'
 import Preloader from 'components/shared/preloader'
@@ -19,7 +19,7 @@ const Search: NextPage = () => {
   }
 
   return (
-    <PageLayout title="Search">
+    <Page title="Search">
       {postsLoaded ? (
         <>
           <SectionHeader
@@ -40,7 +40,7 @@ const Search: NextPage = () => {
           )}
         </div>
       )}
-    </PageLayout>
+    </Page>
   )
 }
 

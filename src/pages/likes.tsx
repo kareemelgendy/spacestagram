@@ -1,4 +1,4 @@
-import PageLayout from 'components/layout'
+import Page from 'components/layout'
 import Icon from 'components/shared/icon'
 import NoResults from 'components/shared/no-results'
 import Post from 'components/shared/post'
@@ -17,7 +17,7 @@ const LikedPosts: NextPage = () => {
   }, [])
 
   return (
-    <PageLayout title="Likes">
+    <Page title="Likes">
       {data.length > 0 ? (
         <>
           <SectionHeader iconName="likes" title="likes" />
@@ -28,7 +28,7 @@ const LikedPosts: NextPage = () => {
       ) : (
         <NoResults image={<Icon name="likes" fill size={72} />} message="No liked images yet!" />
       )}
-    </PageLayout>
+    </Page>
   )
 }
 

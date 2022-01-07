@@ -1,4 +1,4 @@
-export interface PostData {
+export type PostData = {
   date: string
   url: string
   hdurl: string
