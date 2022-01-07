@@ -1,5 +1,5 @@
 {
-  "name": "spacetagram",
+  "name": "spacestagram",
   "private": true,
   "scripts": {
     "dev": "next dev",

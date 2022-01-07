@@ -19,7 +19,7 @@ const Navbar = (): JSX.Element => {
       <nav className={styles.container}>
         <div className={styles.logo}>
           <Link href="/" replace>
-            SPACETAGRAM
+            SPACESTAGRAM
           </Link>
         </div>
         <div className={styles.pages}>

@@ -57,7 +57,7 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <Page title="Spacetagram">
+    <Page title="Spacestagram">
       {postsLoaded ? (
         <>
           <SectionHeader iconName="planet" title="final frontier" />
