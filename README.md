@@ -6,16 +6,16 @@ A web application that pulls images from NASA's Astronomy Picture of the Day API
 
 ## Tools
 
-- Next.js
-- Next.js API Routing
-- Vercel, for hosting
-- Figma, for mockups
-- Boxicons, for icons
+- Next.js + TypeScript
+- Next.js API Routes
+- Design: [Figma](https://figma.com)
+- Icons: [Boxicons](https://boxicons.com)
+- Hosting: [Vercel](https://vercel.com/)
 
 ## Implemented Features
 
 - Infinite scroll feed
-- Like/unlike posts
+- Like/unlike posts (Double tap)
 - Bookmark/unbookmark posts
 - Copy shareable links
 - Search for images by date
