@@ -10,25 +10,23 @@ interface IconProps {
 }
 
 const Icon = ({ name, fill, size, ariaLabel, onClick }: IconProps): JSX.Element => {
-  const BoxIcon = () => (
+  const BoxIcon = (
     <Image
-      src={`/assets/icons/${name}${fill ? `_filled` : ``}.svg`}
+      src={`/assets/icons/${name}${fill ? '_filled' : ''}.svg`}
       alt={`${name}-icon`}
       width={size || '24px'}
       height={size || '24px'}
       aria-label={ariaLabel}
-      loading="eager"
+      loading='eager'
     />
   )
 
   return onClick ? (
-    <button className={styles.wrapper__button} onClick={onClick}>
-      <BoxIcon />
+    <button type='button' className={styles.wrapper__button} onClick={onClick}>
+      {BoxIcon}
     </button>
   ) : (
-    <div className={styles.wrapper}>
-      <BoxIcon />
-    </div>
+    <div className={styles.wrapper}>{BoxIcon}</div>
   )
 }
 

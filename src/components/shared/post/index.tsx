@@ -4,8 +4,8 @@ import { PostData } from 'helpers/types/post'
 import Image from 'next/image'
 import { forwardRef, useState } from 'react'
 import ShowMore from 'components/shared/show-more'
-import styles from './post.module.scss'
 import Icon from 'components/shared/icon'
+import styles from './post.module.scss'
 
 interface PostProps {
   post: PostData
@@ -18,8 +18,16 @@ const Post = forwardRef<HTMLDivElement, PostProps>(({ post }, ref) => {
   const [bookmarked, setBookmarked] = useState(isSaved('bookmarks', post))
 
   const handleInteraction = (type: string, action: boolean) => {
-    type === 'likes' ? setLiked(action) : setBookmarked(action)
-    action ? savePost(type, post) : removePost(type, post.date)
+    if (type === 'likes') {
+      setLiked(action)
+    } else {
+      setBookmarked(action)
+    }
+    if (action) {
+      savePost(type, post)
+    } else {
+      removePost(type, post.date)
+    }
   }
 
   const handleDoubleTap = () => {
@@ -32,7 +40,7 @@ const Post = forwardRef<HTMLDivElement, PostProps>(({ post }, ref) => {
   }
 
   return (
-    <div className={styles.container} ref={ref}>
+    <article className={styles.container} ref={ref}>
       <div className={styles.header}>
         <div className={styles.title}>{post.title}</div>
         <div className={styles.date}>{post.date}</div>
@@ -42,11 +50,11 @@ const Post = forwardRef<HTMLDivElement, PostProps>(({ post }, ref) => {
           className={styles.image}
           src={post.media_type === 'video' ? post.thumbnail_url : post.url}
           alt={post.title}
-          layout="fill"
-          loading="lazy"
+          layout='fill'
+          loading='lazy'
         />
         {doubleTap && (
-          <div className={styles.like}>{doubleTap && <Icon name="likes" fill size={124} />}</div>
+          <div className={styles.like}>{doubleTap && <Icon name='likes' fill size={124} />}</div>
         )}
       </div>
       <InteractionBar
@@ -60,7 +68,7 @@ const Post = forwardRef<HTMLDivElement, PostProps>(({ post }, ref) => {
         <p className={expanded ? styles.caption__expanded : styles.caption}>{post.explanation}</p>
         <ShowMore setExpanded={setExpanded} />
       </div>
-    </div>
+    </article>
   )
 })
 

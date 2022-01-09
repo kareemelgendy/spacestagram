@@ -17,16 +17,16 @@ const LikedPosts: NextPage = () => {
   }, [])
 
   return (
-    <Page title="Likes">
+    <Page title='Likes'>
       {data.length > 0 ? (
         <>
-          <SectionHeader iconName="likes" title="likes" />
-          {data.map((post, key) => (
-            <Post key={key} post={post} />
+          <SectionHeader iconName='likes' title='likes' />
+          {data.map((post) => (
+            <Post key={post.date} post={post} />
           ))}
         </>
       ) : (
-        <NoResults image={<Icon name="likes" fill size={72} />} message="No liked images yet!" />
+        <NoResults image={<Icon name='likes' fill size={72} />} message='No liked images yet!' />
       )}
     </Page>
   )

@@ -19,16 +19,16 @@ const Search: NextPage = () => {
   }
 
   return (
-    <Page title="Search">
+    <Page title='Search'>
       {postsLoaded ? (
         <>
           <SectionHeader
-            iconName="chevron-left"
+            iconName='chevron-left'
             title={posts.length > 1 ? 'Search results' : `Image from ${posts[0].date}`}
             onClick={() => resetSearch()}
           />
-          {posts.map((post, key) => (
-            <Post key={key} post={post} />
+          {posts.map((post) => (
+            <Post key={post.date} post={post} />
           ))}
         </>
       ) : (

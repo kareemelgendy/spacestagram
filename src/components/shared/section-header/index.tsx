@@ -7,20 +7,18 @@ interface SectionHeaderProps {
   onClick?: () => void
 }
 
-const SectionHeader = ({ title, iconName, onClick }: SectionHeaderProps) => {
-  return (
-    <div className={styles.container}>
-      {iconName && (
-        <Icon
-          name={iconName}
-          fill={iconName === 'likes' || iconName === 'bookmarks'}
-          size={32}
-          onClick={onClick}
-        />
-      )}
-      <h2>{title}</h2>
-    </div>
-  )
-}
+const SectionHeader = ({ title, iconName, onClick }: SectionHeaderProps) => (
+  <div className={styles.container}>
+    {iconName && (
+      <Icon
+        name={iconName}
+        fill={iconName === 'likes' || iconName === 'bookmarks'}
+        size={32}
+        onClick={onClick}
+      />
+    )}
+    <h2>{title}</h2>
+  </div>
+)
 
 export default SectionHeader

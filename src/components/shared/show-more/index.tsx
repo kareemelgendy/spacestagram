@@ -18,7 +18,7 @@ const ShowMore = ({ setExpanded }: ShowMoreProps) => {
     <>
       {!toggled && <div className={styles.gradient} />}
       <div className={styles.container}>
-        <button className={styles.wrapper} onClick={handleToggle}>
+        <button type='button' className={styles.wrapper} onClick={handleToggle}>
           <Icon name={toggled ? 'chevron-up' : 'chevron-down'} />
           {toggled ? 'Show less' : 'Show more'}
         </button>

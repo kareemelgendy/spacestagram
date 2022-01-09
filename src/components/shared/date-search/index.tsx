@@ -8,7 +8,8 @@ const Error = (): JSX.Element => (
   <div className={styles.instructions}>
     Pick a date between
     <div className={styles.row}>
-      <strong> 1995-06-16</strong> &nbsp;&amp;&nbsp;
+      <strong>1995-06-16</strong>
+      &nbsp;&amp;&nbsp;
       <strong>{todaysDate()}</strong>
     </div>
   </div>
@@ -23,27 +24,15 @@ const DateSearch = ({ setActiveSearch, setPosts }: DateSearchProps) => {
   const [error, setError] = useState(false)
   const [date, setDate] = useState('')
 
-  const getSingleImage = async (date: string) => {
+  const getSingleImage = async (imageDate: string) => {
     setActiveSearch(true)
-    const response = await fetch(`/api/single?date=${date}`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json()
-        }
-      })
-      .catch((error) => console.log(error))
+    const response = await fetch(`/api/single?date=${imageDate}`).then((res) => res.json())
     setPosts([response.post])
   }
 
   const getRandomImages = async () => {
     setActiveSearch(true)
-    const response = await fetch('/api/random')
-      .then((res) => {
-        if (res.ok) {
-          return res.json()
-        }
-      })
-      .catch((error) => console.log(error))
+    const response = await fetch('/api/random').then((res) => res.json())
     setPosts(response.posts)
   }
 
@@ -67,31 +56,35 @@ const DateSearch = ({ setActiveSearch, setPosts }: DateSearchProps) => {
 
   return (
     <div className={`${styles.container} ${error ? styles.error : ''}`}>
-      <Icon name="planet" size={72} />
+      <Icon name='planet' size={72} />
       <div className={styles.wrapper}>
         <h2>Discover more images</h2>
         <input
-          type="date"
-          placeholder="YYYY-MM-DD"
-          aria-label="enter a date"
+          type='date'
+          placeholder='YYYY-MM-DD'
+          aria-label='enter a date'
           onChange={(e) => handleDateSet(e)}
         />
       </div>
       {error && <Error />}
       <div className={styles.row}>
         <button
+          type='button'
           className={styles.button}
           onClick={() => handleSearch()}
-          aria-label="Search for image"
+          aria-label='Search for image'
         >
-          <Icon name="search" size={14} fill /> Search
+          <Icon name='search' size={14} fill />
+          Search
         </button>
         <button
+          type='button'
           className={styles.button}
           onClick={() => getRandomImages()}
-          aria-label="Get random images"
+          aria-label='Get random images'
         >
-          <Icon name="shuffle" size={14} /> Random
+          <Icon name='shuffle' size={14} />
+          Random
         </button>
       </div>
     </div>

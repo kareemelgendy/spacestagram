@@ -17,18 +17,18 @@ const SavedPosts: NextPage = () => {
   }, [])
 
   return (
-    <Page title="Bookmarks">
+    <Page title='Bookmarks'>
       {data.length > 0 ? (
         <>
-          <SectionHeader iconName="bookmarks" title="bookmarks" />
-          {data.map((post, key) => (
-            <Post key={key} post={post} />
+          <SectionHeader iconName='bookmarks' title='bookmarks' />
+          {data.map((post) => (
+            <Post key={post.date} post={post} />
           ))}
         </>
       ) : (
         <NoResults
-          image={<Icon name="bookmarks" fill size={72} />}
-          message="No bookmarked images yet!"
+          image={<Icon name='bookmarks' fill size={72} />}
+          message='No bookmarked images yet!'
         />
       )}
     </Page>

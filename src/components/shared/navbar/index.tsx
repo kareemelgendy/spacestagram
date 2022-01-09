@@ -18,13 +18,13 @@ const Navbar = (): JSX.Element => {
     <header>
       <nav className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/" replace>
+          <Link href='/' replace>
             SPACESTAGRAM
           </Link>
         </div>
         <div className={styles.pages}>
-          {pages.map((page, key) => (
-            <Link key={key} href={`${pageLink(page)}`} replace passHref>
+          {pages.map((page) => (
+            <Link key={page} href={pageLink(page)} replace passHref>
               <Icon name={page} ariaLabel={`Go to ${page} page`} />
             </Link>
           ))}

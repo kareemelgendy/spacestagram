@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import Page from 'components/layout'
 import Post from 'components/shared/post'
 import Preloader from 'components/shared/preloader'
@@ -12,8 +13,15 @@ const Home: NextPage = () => {
   const [loading, setLoading] = useState(true)
   const [posts, setPosts] = useState<PostData[]>([])
   const [date, setDate] = useState(getDate(todaysDate(), 5))
-
   const postsLoaded = posts.length > 0
+
+  const getPosts = async () => {
+    setLoading(true)
+    const response = await fetch(`/api/range?date=${date}`).then((res) => res.json())
+    setPosts([...response.posts])
+    setDate(response.date)
+    setLoading(false)
+  }
 
   // Infinite scroll
   const observer = useRef<IntersectionObserver | null>(null)
@@ -34,40 +42,23 @@ const Home: NextPage = () => {
         observer.current.observe(post)
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [loading]
   )
-
-  const getPosts = async () => {
-    setLoading(true)
-    const response = await fetch(`/api/range?date=${date}`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json()
-        }
-      })
-      .catch((error) => console.log(error))
-    setPosts([...response.posts])
-    setDate(response.date)
-    setLoading(false)
-  }
 
   useEffect(() => {
     getPosts()
   }, [])
 
   return (
-    <Page title="Spacestagram">
+    <Page title='Spacestagram'>
       {postsLoaded ? (
         <>
-          <SectionHeader iconName="planet" title="final frontier" />
-          {posts.map((post, key) =>
-            posts.length - 2 === key ? (
-              <Post key={key} post={post} ref={postRef} />
-            ) : (
-              <Post key={key} post={post} />
-            )
-          )}
+          <SectionHeader iconName='planet' title='final frontier' />
+          {posts.map((post, key) => (posts.length - 2 === key ? (
+            <Post key={key} post={post} ref={postRef} />
+          ) : (
+            <Post key={key} post={post} />
+          )))}
           {loading && <Preloader />}
         </>
       ) : (

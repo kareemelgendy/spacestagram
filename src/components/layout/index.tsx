@@ -8,18 +8,16 @@ interface PageProps {
   children: ReactNode
 }
 
-const Page = ({ title, children }: PageProps) => {
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <div className={styles.container}>
-        <Navbar />
-        <main className={styles.feed}>{children}</main>
-      </div>
-    </>
-  )
-}
+const Page = ({ title, children }: PageProps) => (
+  <>
+    <Head>
+      <title>{title}</title>
+    </Head>
+    <div className={styles.container}>
+      <Navbar />
+      <main className={styles.feed}>{children}</main>
+    </div>
+  </>
+)
 
 export default Page
