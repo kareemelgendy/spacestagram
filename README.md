@@ -1,6 +1,6 @@
 # Shopify Internship Challenge 2022
 
-[View here](https://spacetagram-phi.vercel.app)
+[View here](https://spacestagram-phi.vercel.app)
 
 A web application that pulls images from NASA's Astronomy Picture of the Day API and displays them in a feed that allows users to like, bookmark, search, and share them with others.
 
