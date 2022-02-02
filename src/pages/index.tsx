@@ -11,7 +11,7 @@ import styles from 'styles/layout.module.scss'
 
 export async function getServerSideProps() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_DEV}/api/range?date=${getDate(todaysDate(), 5)}`
+    `${process.env.NEXT_PUBLIC_PROD}/api/range?date=${getDate(todaysDate(), 5)}`
   ).then((res) => res.json())
 
   return {
