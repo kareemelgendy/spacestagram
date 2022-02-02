@@ -6,7 +6,7 @@ import SectionHeader from 'components/shared/section-header'
 import { PostData } from 'helpers/types/post'
 import { NextPage } from 'next'
 import { useState } from 'react'
-import styles from 'styles/Home.module.scss'
+import styles from 'styles/layout.module.scss'
 
 const Search: NextPage = () => {
   const [posts, setPosts] = useState<PostData[]>([])

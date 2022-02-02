@@ -1,12 +1,17 @@
 import { PostData } from './types/post'
 
 export const getPosts = (type: string): Record<string, PostData> => {
-  const data = localStorage.getItem(type)
-  return data ? JSON.parse(data) : []
+  if (typeof window !== 'undefined') {
+    const data = localStorage.getItem(type)
+    return data ? JSON.parse(data) : {}
+  }
+  return {}
 }
 
 export const updatePosts = (type: string, posts: Record<string, PostData>): void => {
-  localStorage.setItem(type, JSON.stringify(posts))
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(type, JSON.stringify(posts))
+  }
 }
 
 export const isSaved = (type: string, post: PostData): boolean => {
