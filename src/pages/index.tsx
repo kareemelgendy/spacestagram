@@ -6,14 +6,32 @@ import SectionHeader from 'components/shared/section-header'
 import { PostData } from 'helpers/types/post'
 import { getDate, todaysDate } from 'helpers/util'
 import type { NextPage } from 'next'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import styles from 'styles/Home.module.scss'
+import { useCallback, useRef, useState } from 'react'
+import styles from 'styles/layout.module.scss'
 
-const Home: NextPage = () => {
-  const [loading, setLoading] = useState(true)
-  const [posts, setPosts] = useState<PostData[]>([])
-  const [date, setDate] = useState(getDate(todaysDate(), 5))
-  const postsLoaded = posts.length > 0
+export async function getServerSideProps() {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_DEV}/api/range?date=${getDate(todaysDate(), 5)}`
+  ).then((res) => res.json())
+
+  return {
+    props: {
+      images: response.posts,
+      newDate: response.date
+    }
+  }
+}
+
+interface FeedProps {
+  images: PostData[]
+  newDate: string
+}
+
+const Home: NextPage<FeedProps> = ({ images, newDate }: FeedProps) => {
+  const [loading, setLoading] = useState(false)
+  const [posts, setPosts] = useState<PostData[]>(images)
+  const [date, setDate] = useState(newDate)
+  const postsLoaded = posts?.length > 0
 
   const getPosts = async () => {
     setLoading(true)
@@ -45,19 +63,15 @@ const Home: NextPage = () => {
     [loading]
   )
 
-  useEffect(() => {
-    getPosts()
-  }, [])
-
   return (
     <Page title='Spacestagram'>
       {postsLoaded ? (
         <>
           <SectionHeader iconName='planet' title='final frontier' />
-          {posts.map((post, key) => (posts.length - 2 === key ? (
-            <Post key={key} post={post} ref={postRef} />
+          {posts.map((post, key) => (posts.length - 3 === key ? (
+            <Post key={post.title} post={post} ref={postRef} />
           ) : (
-            <Post key={key} post={post} />
+            <Post key={post.title} post={post} />
           )))}
           {loading && <Preloader />}
         </>
