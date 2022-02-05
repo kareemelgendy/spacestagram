@@ -14,8 +14,9 @@ A web application that pulls images from NASA's Astronomy Picture of the Day API
 
 ## Implemented Features
 
+- Server-side rendering
 - Infinite scroll feed
-- Like/unlike posts (Double tap)
+- Like/unlike posts + Double tap
 - Bookmark/unbookmark posts
 - Copy shareable links
 - Search for images by date
