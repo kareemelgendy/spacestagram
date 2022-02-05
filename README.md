@@ -1,4 +1,4 @@
-# Shopify Internship Challenge 2022
+# Spacestagram
 
 [View here](https://spacestagram-phi.vercel.app)
 
