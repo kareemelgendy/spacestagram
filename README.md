@@ -4,6 +4,8 @@
 
 A web application that pulls images from NASA's Astronomy Picture of the Day API and displays them in a feed that allows users to like, bookmark, search, and share them with others.
 
+** **Initially for the Shopify Internship Application 2022**
+
 ## Tools
 
 - Next.js + TypeScript
